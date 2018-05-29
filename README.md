@@ -11,3 +11,9 @@ You need to feed credentials to the container:
 or
 
 `docker run -v ~/.aws:/root/.aws aayore/docker-awscli aws s3 ls`
+
+---
+
+If you want to transfer any data, you'll have to mount the local directory:
+
+`docker run -v ~/.aws:/root/.aws -v /your_data:/data aayore/docker-awscli aws s3 sync /data s3://your_bucket`
